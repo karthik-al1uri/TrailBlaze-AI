@@ -1,0 +1,102 @@
+================================================================================
+TRAILBLAZE AI — LOCAL SETUP & TEAM WORKFLOW
+================================================================================
+
+1. PREREQUISITES
+--------------------------------------------------------------------------------
+  • Python 3.10+ recommended (use same major version across the team).
+  • Git, and a GitHub account with access to the team repository.
+  • Optional: AWS CLI (when infra and deployments are added).
+
+
+2. CLONE THE REPOSITORY
+--------------------------------------------------------------------------------
+  git clone <your-github-repo-url>
+  cd TrailBlaze-AI
+
+
+3. PYTHON VIRTUAL ENVIRONMENT (BACKEND)
+--------------------------------------------------------------------------------
+  From the project root:
+
+    cd backend
+    python3 -m venv .venv
+
+  Activate:
+
+    macOS / Linux:
+      source .venv/bin/activate
+
+    Windows (cmd):
+      .venv\Scripts\activate.bat
+
+    Windows (PowerShell):
+      .venv\Scripts\Activate.ps1
+
+  You should see (.venv) in your shell prompt when active.
+
+
+4. INSTALL DEPENDENCIES
+--------------------------------------------------------------------------------
+  With the venv activated:
+
+    pip install --upgrade pip
+    pip install -r requirements.txt
+
+  As packages are added to requirements.txt, re-run pip install -r requirements.txt
+  and commit the updated file so everyone stays in sync.
+
+
+5. ENVIRONMENT VARIABLES
+--------------------------------------------------------------------------------
+  From the repository root (TrailBlaze-AI/):
+
+    cp .env.example .env
+
+  If your shell is currently in backend/, use:
+
+    cp ../.env.example ../.env
+
+  Edit .env with API keys and AWS-related values when those integrations exist.
+  Never commit .env — it is listed in .gitignore.
+
+
+6. RUN THE PLACEHOLDER BACKEND (OPTIONAL)
+--------------------------------------------------------------------------------
+  With venv activated and cwd in backend:
+
+    python -m app.main
+
+  Replace this with uvicorn/FastAPI or your chosen stack when the API is implemented.
+
+
+7. SOURCE CONTROL (GITHUB)
+--------------------------------------------------------------------------------
+  • Use feature branches and pull requests; protect main if the course allows.
+  • Link commits or PRs to Trello cards when your team agrees on that convention.
+  • Store secrets only in .env or your CI/CD secret store — never in the repo.
+
+
+8. CLOUD (AWS) — INTEGRATION REMINDER
+--------------------------------------------------------------------------------
+  • AWS will host services (e.g. compute, storage, managed DB or vector search)
+    as the project matures; keep infrastructure definitions under infra/ when added.
+  • Use IAM roles and environment-specific configs rather than long-lived keys
+    in code when possible.
+  • Document required AWS resources in docs/ or README once deployment exists.
+
+
+9. AGILE TOOL (TRELLO)
+--------------------------------------------------------------------------------
+  • Use one Trello board for backlog, sprint/in-progress, and done columns.
+  • Each card: short title, acceptance criteria, and owner when applicable.
+  • Optional: GitHub branch name or PR URL in the card for traceability.
+
+
+10. TROUBLESHOOTING
+--------------------------------------------------------------------------------
+  • Wrong Python: use python3 explicitly, or py -3 on Windows.
+  • pip errors: ensure the virtual environment is activated before pip install.
+  • Import errors: run commands from the correct directory (e.g. backend for app.*).
+
+================================================================================

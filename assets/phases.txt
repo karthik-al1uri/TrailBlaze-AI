@@ -1,0 +1,44 @@
+================================================================================
+TRAILBLAZE AI — PROJECT FOLDER STRUCTURE (skeleton)
+================================================================================
+
+TrailBlaze-AI/
+├── README.md                 Project title, description, pointers to docs
+├── .env.example              Template for environment variables (no secrets)
+├── .gitignore                Ignore venv, .env, data blobs, IDE files, etc.
+├── assets/
+│   ├── phases.txt            This file — folder tree + suggested phases
+│   └── setup.txt             Venv, pip, GitHub, AWS, Trello notes
+├── backend/
+│   ├── requirements.txt      Python dependencies (pin versions as you add them)
+│   └── app/
+│       ├── __init__.py
+│       └── main.py           Placeholder entrypoint / future API
+├── data/                     Local samples only (do not commit sensitive data)
+├── docs/                     Architecture notes, ADRs, design docs
+├── frontend/                 Web UI (placeholder)
+└── infra/                    AWS / IaC / deployment configs (placeholder)
+
+================================================================================
+SUGGESTED PROJECT PHASES (5-person team)
+================================================================================
+
+Phase 0 — Foundations
+  Repo, branching, CI basics; agree MVP scope; Trello board with backlog.
+
+Phase 1 — Data
+  Ingest trail metadata (e.g. COTREX); define schemas; optional review corpus.
+
+Phase 2 — RAG core
+  Chunk text, embeddings, vector store, retrieval + grounded answers with citations.
+
+Phase 3 — Conditions & safety
+  Weather API integration; rules for time windows (e.g. “afternoon”) and risk signals.
+
+Phase 4 — Product surface
+  API orchestration + UI; natural language → structured filters + RAG.
+
+Phase 5 — Cloud & demo
+  Deploy on AWS; observability; demo script; documentation for reproducibility.
+
+================================================================================
