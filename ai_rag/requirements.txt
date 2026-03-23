@@ -1,5 +1,0 @@
-langgraph
-faiss-cpu
-openai
-anthropic
-numpy
