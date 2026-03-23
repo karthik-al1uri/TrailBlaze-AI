@@ -1,13 +1,25 @@
 # TrailBlaze AI
 
-## Title
+TrailBlaze AI is a smart Colorado outdoor guide that combines trail metadata, weather context,
+and review retrieval to answer natural-language trail questions.
 
-**TrailBlaze AI — Smart Colorado Outdoor Guide**
+## Project Skeleton
 
-## Description
+This repository is organized by delivery phase:
 
-TrailBlaze AI is a platform that goes beyond basic trail filters. It combines data from sources such as COTREX (Colorado Trail Explorer), live weather APIs, and trail reviews so users can ask natural-language questions—for example, finding a trail near Boulder under five miles with good shade and acceptable lightning risk for the afternoon. The system uses a Retrieval-Augmented Generation (RAG) pipeline to query unstructured text from large collections of reviews and condition reports.
+- `ai_rag/` - LangGraph routing, embeddings, FAISS retrieval, and Task 1 demo script.
+- `etl/` - Scrapers, COTREX ingestion placeholders, and text cleaning/chunking pipeline.
+- `data/` - Data contracts and storage layout for staged and processed datasets.
+- `backend/` - FastAPI service with mock endpoints and starter Mongo models.
+- `frontend/` - Next.js/React/Tailwind/Mapbox application shell placeholders.
+- `infra/` - Dockerfiles and CI/CD workflow baseline.
+- `integration/` - End-to-end acceptance criteria and smoke test scaffold.
+- `assets/project-charter/` - Formal project charter and milestone checklist.
 
-Planned tooling: **AWS** for cloud services, **GitHub** for source control, and **Trello** for agile planning and task tracking.
+## Quick Start
 
-For folder layout and phased delivery, see `assets/phases.txt`. For local setup (virtual environment, dependencies, and how the repo fits with cloud and agile workflows), see `assets/setup.txt`.
+- Backend mock API:
+  - `pip install -r backend/requirements.txt`
+  - `uvicorn backend.app.main:app --reload`
+- RAG smoke demo:
+  - `python3 ai_rag/scripts/demo_rag_pipeline.py`
