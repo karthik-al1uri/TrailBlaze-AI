@@ -1,0 +1,42 @@
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.venv/
+venv/
+
+# Node / frontend
+node_modules/
+.next/
+dist/
+build/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*credentials*.json
+secrets*.json
+
+# Logs and temporary artifacts
+*.log
+tmp/
+temp/
+
+# Local data artifacts
+data/raw/
+data/tmp/
+*.sqlite3
+
+# Diagram source XML (keep exported images/docs instead)
+assets/Diagrams/XML-code/
+docs/diagrams/xml/
