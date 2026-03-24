@@ -1,0 +1,68 @@
+<mxfile host="app.diagrams.net" modified="2026-03-22T13:10:00.000Z" agent="Mozilla/5.0" version="24.7.17" type="device">
+  <diagram id="diag-a-rag-app" name="Diagram A - RAG Application">
+    <mxGraphModel dx="1280" dy="720" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <mxCell id="title" value="Diagram A - RAG Application (Internal Flow)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=16;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="20" width="520" height="30" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="lane1" value="Orchestration" style="swimlane;rounded=0;whiteSpace=wrap;html=1;fillColor=#f8f9fa;strokeColor=#cccccc;" vertex="1" parent="1">
+          <mxGeometry x="40" y="80" width="1720" height="190" as="geometry"/>
+        </mxCell>
+        <mxCell id="lane2" value="Retrieval and Context Services" style="swimlane;rounded=0;whiteSpace=wrap;html=1;fillColor=#f8f9fa;strokeColor=#cccccc;" vertex="1" parent="1">
+          <mxGeometry x="40" y="290" width="1720" height="200" as="geometry"/>
+        </mxCell>
+        <mxCell id="lane3" value="Knowledge Stores and Model Inference" style="swimlane;rounded=0;whiteSpace=wrap;html=1;fillColor=#f8f9fa;strokeColor=#cccccc;" vertex="1" parent="1">
+          <mxGeometry x="40" y="510" width="1720" height="220" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="api_in" value="Request Input&#10;(from Platform API)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="90" y="145" width="220" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="router" value="LangGraph Router&#10;(State Graph)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="380" y="145" width="260" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="planner" value="Prompt and Context Planner" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="700" y="145" width="260" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="vector" value="Vector Retrieval Agent&#10;(FAISS Top-K)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="200" y="355" width="280" height="75" as="geometry"/>
+        </mxCell>
+        <mxCell id="weather" value="Weather Context Agent" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="540" y="355" width="240" height="75" as="geometry"/>
+        </mxCell>
+        <mxCell id="ground" value="Grounding and Citation Builder" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="840" y="355" width="300" height="75" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="mongo" value="MongoDB Trail Corpus" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;fillColor=#f5f5f5;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="220" y="575" width="260" height="85" as="geometry"/>
+        </mxCell>
+        <mxCell id="faiss" value="FAISS Index" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;fillColor=#f5f5f5;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="540" y="575" width="200" height="85" as="geometry"/>
+        </mxCell>
+        <mxCell id="llm" value="LLM Provider&#10;(OpenAI / Claude)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="820" y="575" width="280" height="85" as="geometry"/>
+        </mxCell>
+        <mxCell id="rag_out" value="RAG Output&#10;(answer + citations + confidence)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1180" y="575" width="360" height="85" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e1" value="input" style="endArrow=block;html=1;strokeWidth=2;" edge="1" parent="1" source="api_in" target="router"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e2" value="route" style="endArrow=block;html=1;" edge="1" parent="1" source="router" target="planner"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e3" value="retrieve" style="endArrow=block;html=1;" edge="1" parent="1" source="planner" target="vector"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e4" value="weather context" style="endArrow=block;html=1;" edge="1" parent="1" source="planner" target="weather"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e5" value="merge contexts" style="endArrow=block;html=1;" edge="1" parent="1" source="vector" target="ground"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e6" value="merge contexts" style="endArrow=block;html=1;" edge="1" parent="1" source="weather" target="ground"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e7" value="source docs" style="endArrow=block;html=1;" edge="1" parent="1" source="mongo" target="vector"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e8" value="semantic search" style="endArrow=block;html=1;" edge="1" parent="1" source="faiss" target="vector"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e9" value="prompt package" style="endArrow=block;html=1;" edge="1" parent="1" source="ground" target="llm"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e10" value="response" style="endArrow=block;html=1;strokeWidth=2;" edge="1" parent="1" source="llm" target="rag_out"><mxGeometry relative="1" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

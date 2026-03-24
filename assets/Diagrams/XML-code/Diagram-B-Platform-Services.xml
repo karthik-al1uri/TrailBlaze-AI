@@ -1,0 +1,92 @@
+<mxfile host="app.diagrams.net" modified="2026-03-22T13:12:00.000Z" agent="Mozilla/5.0" version="24.7.17" type="device">
+  <diagram id="diag-b-platform" name="Diagram B - Platform Services">
+    <mxGraphModel dx="1280" dy="720" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <mxCell id="title" value="Diagram B - Platform Services (UI, API, Data, Deployment)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=16;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="20" width="700" height="30" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="lane1" value="Product Interface" style="swimlane;rounded=0;whiteSpace=wrap;html=1;fillColor=#f8f9fa;strokeColor=#cccccc;" vertex="1" parent="1">
+          <mxGeometry x="40" y="80" width="1720" height="160" as="geometry"/>
+        </mxCell>
+        <mxCell id="lane2" value="Backend Services" style="swimlane;rounded=0;whiteSpace=wrap;html=1;fillColor=#f8f9fa;strokeColor=#cccccc;" vertex="1" parent="1">
+          <mxGeometry x="40" y="260" width="1720" height="190" as="geometry"/>
+        </mxCell>
+        <mxCell id="lane3" value="Data Engineering" style="swimlane;rounded=0;whiteSpace=wrap;html=1;fillColor=#f8f9fa;strokeColor=#cccccc;" vertex="1" parent="1">
+          <mxGeometry x="40" y="470" width="1720" height="190" as="geometry"/>
+        </mxCell>
+        <mxCell id="lane4" value="Delivery and Operations" style="swimlane;rounded=0;whiteSpace=wrap;html=1;fillColor=#f8f9fa;strokeColor=#cccccc;" vertex="1" parent="1">
+          <mxGeometry x="40" y="680" width="1720" height="210" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="user" value="User" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="120" y="135" width="140" height="55" as="geometry"/>
+        </mxCell>
+        <mxCell id="web" value="Web App&#10;(Next.js + Mapbox UI)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="330" y="125" width="280" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="api" value="FastAPI Gateway" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="180" y="320" width="220" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="session" value="Session and Auth Service" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="460" y="320" width="240" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="chat" value="Chat and Itinerary Service" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="760" y="320" width="260" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="rag_call" value="RAG Application Invocation" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="320" width="300" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="scrape" value="Forum Scrapers&#10;(BeautifulSoup / Selenium)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="180" y="530" width="280" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="cotrex" value="COTREX Data Ingestor" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="520" y="530" width="220" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="etl" value="ETL Normalize and Chunk Pipeline" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="800" y="530" width="300" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="db" value="MongoDB" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;fillColor=#f5f5f5;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="1160" y="520" width="180" height="85" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="git" value="GitHub Repo" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="180" y="760" width="200" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="actions" value="GitHub Actions CI/CD" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="440" y="760" width="240" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="docker" value="Docker Build Artifacts" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="740" y="760" width="250" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="aws" value="AWS Runtime&#10;(EC2 / Elastic Beanstalk)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="1050" y="760" width="300" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="obs" value="Monitoring and Logs" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="1410" y="760" width="230" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e1" value="interaction" style="endArrow=block;html=1;strokeWidth=2;" edge="1" parent="1" source="user" target="web"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e2" value="api call" style="endArrow=block;html=1;strokeWidth=2;" edge="1" parent="1" source="web" target="api"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e3" value="session check" style="endArrow=block;html=1;" edge="1" parent="1" source="api" target="session"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e4" value="chat and itinerary" style="endArrow=block;html=1;" edge="1" parent="1" source="api" target="chat"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e5" value="query handoff" style="endArrow=block;html=1;" edge="1" parent="1" source="chat" target="rag_call"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <mxCell id="e6" value="raw reviews" style="endArrow=block;html=1;" edge="1" parent="1" source="scrape" target="etl"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e7" value="official trails" style="endArrow=block;html=1;" edge="1" parent="1" source="cotrex" target="etl"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e8" value="persist dataset" style="endArrow=block;html=1;" edge="1" parent="1" source="etl" target="db"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e9" value="read/write" style="endArrow=block;html=1;" edge="1" parent="1" source="chat" target="db"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <mxCell id="e10" value="commit and merge" style="dashed=1;endArrow=block;html=1;strokeColor=#9673a6;" edge="1" parent="1" source="git" target="actions"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e11" value="build" style="dashed=1;endArrow=block;html=1;strokeColor=#9673a6;" edge="1" parent="1" source="actions" target="docker"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e12" value="deploy" style="dashed=1;endArrow=block;html=1;strokeColor=#9673a6;" edge="1" parent="1" source="docker" target="aws"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e13" value="telemetry" style="dashed=1;endArrow=block;html=1;strokeColor=#9673a6;" edge="1" parent="1" source="aws" target="obs"><mxGeometry relative="1" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
